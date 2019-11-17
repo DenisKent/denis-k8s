@@ -1,0 +1,13 @@
+apiVersion: skaffold/v1
+kind: Config
+metadata:
+  name: denis-project
+build:
+  artifacts:
+  - image: 79382d727c55
+    context: node
+    sync:
+      manual:
+      - src: 'src/**/*.js'
+        dest: .
+        strip: src/

@@ -1,0 +1,35 @@
+{
+  "kind": "Service",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "web",
+    "namespace": "default",
+    "selfLink": "/api/v1/namespaces/default/services/web",
+    "uid": "762ee5ff-c7c8-4ce9-8faa-396939449ea4",
+    "resourceVersion": "13945",
+    "creationTimestamp": "2019-11-17T22:03:16Z",
+    "labels": {
+      "run": "web"
+    }
+  },
+  "spec": {
+    "ports": [
+      {
+        "protocol": "TCP",
+        "port": 8080,
+        "targetPort": 8080,
+        "nodePort": 31188
+      }
+    ],
+    "selector": {
+      "run": "web"
+    },
+    "clusterIP": "10.99.175.18",
+    "type": "NodePort",
+    "sessionAffinity": "None",
+    "externalTrafficPolicy": "Cluster"
+  },
+  "status": {
+    "loadBalancer": {}
+  }
+}
