@@ -4,10 +4,10 @@ metadata:
   name: denis-project
 build:
   artifacts:
-  - image: 79382d727c55
+  - image: denissweat/testing-node
     context: node
     sync:
       manual:
-      - src: 'src/**/*.js'
+      - src: 'src/*.js'
         dest: .
         strip: src/
