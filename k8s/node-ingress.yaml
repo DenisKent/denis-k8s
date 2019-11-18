@@ -2,7 +2,14 @@ apiVersion: networking.k8s.io/v1beta1
 kind: Ingress
 metadata:
   name: test-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
-  backend:
-    serviceName: node-cluster-ip-service
-    servicePort: 3000
+  rules:
+  - host: hello.test
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: node-cluster-ip-service
+          servicePort: 3050
