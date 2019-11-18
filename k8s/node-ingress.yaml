@@ -7,9 +7,14 @@ metadata:
 spec:
   rules:
   - host: hello.test
-    http:
+    http: &http_rules
       paths:
-      - path: /
+      - paths:
         backend:
           serviceName: node-cluster-ip-service
           servicePort: 3050
+  - host: hello.info
+    http: *http_rules
+  - host: app.hello.test
+    http: *http_rules
+
