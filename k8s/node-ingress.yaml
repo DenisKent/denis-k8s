@@ -4,6 +4,5 @@ metadata:
   name: test-ingress
 spec:
   backend:
-    serviceName: node
+    serviceName: node-cluster-ip-service
     servicePort: 3000
-
