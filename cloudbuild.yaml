@@ -1,6 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  args: [ 'build', '-t', 'eu.gcr.io/testing-node/$PROJECT_ID:$REVISION_ID', 'node' ]
+  args: [ 'build', '-t', 'eu.gcr.io/$PROJECT_ID/testing-node:$REVISION_ID', 'node' ]
 images:
-- 'eu.gcr.io/testing-node/$PROJECT_ID:$REVISION_ID'
+- 'eu.gcr.io/$PROJECT_ID/testing-node:$REVISION_ID'
 timeout: "1200s"
