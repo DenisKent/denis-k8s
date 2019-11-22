@@ -1,0 +1,6 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'denis-sweat/testing-node:$REVISION_ID', 'node' ]
+images:
+- 'denis-sweat/testing-node:$REVISION_ID'
+timeout: "1200s"
