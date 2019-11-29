@@ -1,13 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
-  id: Build
+  id: BuildAndPush
   args: [ 'build', '-t', 'eu.gcr.io/$PROJECT_ID/testing-node:$REVISION_ID', 'node' ]
 images:
 - 'eu.gcr.io/$PROJECT_ID/testing-node:$REVISION_ID'
-
-- name: 'gcr.io/cloud-builders/docker'
-  id: Push
-  args:
-  - 'push'
-  - 'eu.gcr.io/$PROJECT_ID/testing-node:$REVISION_ID'
-timeout: "1200s"
